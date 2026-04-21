@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/stylesheets/styleform.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1>♫ Braz Music Store ♪</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/formulario">Formulario</a></li>
+                <li><a href="/estoque">Estoque</a></li>
+                <% if (logado && usuario.nome) { %>
+                    <li><a href="/logout">Logout</a></li>
+                    <div class="logado">
+                        <li>
+                            <%= usuario.nome %>
+                        </li>
+                        <li><img src="/imagens_usuario/<%= usuario.foto %>" class="circular"></li>
+                    </div>
+                    <% } else { %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/cadastro_usuario">Cadastro</a></li>
+                        <% } %>
+                            <% if (typeof mensagem !=='undefined' && mensagem) { %>
+                                <div class="alert alert-info">
+                                    <%= mensagem %>
+                                </div>
+                                <% } %>
+
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+</html>

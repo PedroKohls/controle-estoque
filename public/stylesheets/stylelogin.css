@@ -1,0 +1,104 @@
+
+        body {
+            background-color: #c57d56;
+            /* Cor de fundo */
+            color: #320000;
+            /* Cor do texto */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding-bottom: 60px; /* Espaço para o rodapé */
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #320000;
+            color: #ffb48a;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul a {
+            color: #ffb48a;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #8d4925;
+            color: #ffb48a;
+            border-radius: 8px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        legend {
+            color: #04ff00b9;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #ddd;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #320000;
+            color: #ffb48a;
+            padding: 10px 20px;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5d2417;
+        }
+
+        footer {
+            background-color: #320000;
+            color: #ffb48a;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }

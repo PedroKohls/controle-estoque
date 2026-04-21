@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/stylesheets/styleform.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <%- include('menu', locals) %>
+
+        <form action="/login" method="POST">
+            <label for="usr">Email:</label>
+            <input type="Email" class="form-control" id="usr" name="email">
+
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" id="pwd" name="senha">
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+</body>
+</html>

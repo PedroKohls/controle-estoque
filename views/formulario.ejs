@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/stylesheets/styleform.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <%- include('menu', locals) %>
+
+    <form action="/cadastro_produto" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descricao:</label>
+            <input type="text" name="descricao" id="descricao" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade" required>
+        </div>
+
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" id="preco" required>
+        </div>
+
+        <div class="form-group">
+            <label for="arquivo">Imagem:</label>
+            <input type="file" name="arquivo" id="foto" onchange="return validarArquivo()" required>
+        </div>
+        <button type="submit">Criar Instrumento</button>
+    </form>
+
+
+</body>
+
+</html>

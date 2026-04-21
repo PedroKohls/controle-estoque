@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Listagem de Instrumentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/styleestoque.css" rel="stylesheet">
+</head>
+
+<%- include('menu', locals) %>
+
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Listagem de Instrumentos cadastrados</h1>
+    <div class="row g-3">
+      <% dadosInstrumento.forEach(function(dados) { %>
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="/imagens_produtos/<%= dados.arquivo %>" class="card-img-top" height="250" width="250" alt="<%= dados.nome %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= dados.nome %></h5>
+              <p class="card-text"><%= dados.descricao %></p>
+              <p class="card-text mb-1"><strong>Quantidade:</strong> <%= dados.quantidade %></p>
+              <p class="card-text mb-3"><strong>Preço:</strong> R$ <%= dados.preco %></p>
+
+              <% if (usuario.id == dados.usuarioId) { %>
+                <div class="d-flex justify-content-between">
+                  <a href="/editar/<%= dados.id %>?usuarioId=<%= dados.usuarioId %>" class="btn btn-warning btn-sm">Editar</a>
+                  <a href="/apagar/<%= dados.id %>?usuarioId=<%= dados.usuarioId %>" class="btn btn-danger btn-sm">Apagar</a>
+                </div>
+              <% } else { %>
+                <p class="text-danger text-center mt-2">Não pode alterar dados de outro usuário!</p>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
